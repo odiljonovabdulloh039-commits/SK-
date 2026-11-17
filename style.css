@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b131d;
+    color: #e0f2fe;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: #070d14;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+    border-bottom: 2px solid #00d4ff;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #00d4ff;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    animation: pulseLogo 2s infinite;
+}
+
+@keyframes pulseLogo {
+    0% { text-shadow: 0 0 10px rgba(0, 212, 255, 0.4); }
+    50% { text-shadow: 0 0 22px rgba(0, 212, 255, 0.9), 0 0 35px rgba(0, 212, 255, 0.5); }
+    100% { text-shadow: 0 0 10px rgba(0, 212, 255, 0.4); }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(11, 19, 29, 0.75), rgba(11, 19, 29, 0.75)), url('https://images.unsplash.com/photo-1599827525114-1e089278923a?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    border-bottom: 4px solid #00d4ff;
+}
+
+.hero-content h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #94a3b8;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0072ff, #00d4ff);
+    color: #fff;
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(0, 212, 255, 0.9);
+}
+
+/* City Cards & Neon Hover Effects */
+main {
+    padding: 60px 0;
+}
+
+.city-card {
+    display: flex;
+    background: #111a27;
+    margin-bottom: 45px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    border: 1px solid #1e293b;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.city-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.7);
+}
+
+.city-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.city-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.city-info h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+.city-info p {
+    margin-bottom: 20px;
+    color: #94a3b8;
+}
+
+.highlights {
+    list-style: none;
+}
+
+.highlights li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #cbd5e1;
+}
+
+.highlights li strong {
+    color: #fff;
+}
+
+.highlights li i {
+    color: #00d4ff;
+    margin-right: 8px;
+}
+
+/* Rasm konteyneri va Neon effektli zoom */
+.city-img-box {
+    flex: 1;
+    min-height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.city-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.city-card:hover .city-img-box img {
+    transform: scale(1.08);
+    filter: brightness(1.15) contrast(1.05);
+}
+
+/* Animatsiyalar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    background: #070d14;
+    color: #64748b;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+    border-top: 2px solid #00d4ff;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .city-card, .city-card.reverse {
+        flex-direction: column;
+    }
+    nav ul {
+        display: none;
+    }
+    .hero-content h2 {
+        font-size: 28px;
+    }
+}
